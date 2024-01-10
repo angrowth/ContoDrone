@@ -1,0 +1,244 @@
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.6",
+  "refresh": {
+      "action": {
+          "type": "Action.Execute",
+          "verb": "refresh",
+          "title": "Actualiser",
+          "data": {
+              "productId": "${productId}"
+          }
+      }
+  },
+  "body": [
+      {
+          "type": "Container",
+          "style": "good",
+          "separator": true,
+          "items": [
+              {
+                  "type": "TextBlock",
+                  "text": "${message}",
+                  "weight": "Bolder",
+                  "size": "Medium",
+                  "color": "Good"
+              }
+          ]
+      },
+      {
+          "type": "Container",
+          "separator": true,
+          "items": [
+              {
+                  "type": "Image",
+                  "url": "https://raw.githubusercontent.com/angrowth/ContoDrone/main/assets/images/ProductID_${productId}.jpg",
+                  "width": "150px",
+                  "height": "100px"
+              },
+              {
+                  "type": "ColumnSet",
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "size": "Large",
+                                  "weight": "Bolder",
+                                  "text": "${productName}",
+                                  "wrap": true,
+                                  "style": "heading"
+                              }
+                          ],
+                          "width": 60
+                      },
+                      {
+                          "type": "Column",
+                          "items": [
+                              {
+                                  "type": "TextBlock",
+                                  "text": "${inventoryStatus}",
+                                  "wrap": true,
+                                  "horizontalAlignment": "Right",
+                                  "isSubtle": true,
+                                  "color": "${if(inventoryStatus == 'En stock', 'good', if(inventoryStatus == 'Faible stock', 'warning', 'attention'))}"
+                              }
+                          ],
+                          "width": 40
+                      }
+                  ]
+              }
+          ],
+          "bleed": true
+      },
+      {
+          "type": "Container",
+          "style": "emphasis",
+          "items": [
+              {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "**📍Informations sur le fournisseur**",
+                  "wrap": true,
+                  "size": "Medium",
+                  "isSubtle": false
+              },
+              {
+                  "type": "ColumnSet",
+                  "separator": true,
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "FactSet",
+                                  "spacing": "Large",
+                                  "facts": [
+                                      {
+                                          "title": "Nom",
+                                          "value": "${supplierName}"
+                                      },
+                                      {
+                                          "title": "Ville",
+                                          "value": "${supplierCity}"
+                                      }
+                                  ],
+                                  "separator": true
+                              }
+                          ]
+                      }
+                  ]
+              },
+              {
+                  "type": "TextBlock",
+                  "weight": "Bolder",
+                  "text": "**🛒 Informations sur les stocks**",
+                  "wrap": true,
+                  "size": "Medium",
+                  "isSubtle": false
+              },
+              {
+                  "type": "ColumnSet",
+                  "separator": true,
+                  "columns": [
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "FactSet",
+                                  "spacing": "Large",
+                                  "facts": [
+                                      {
+                                          "title": "Catégorie",
+                                          "value": "${categoryName}"
+                                      },
+                                      {
+                                          "title": "Prix unitaire",
+                                          "value": "${unitPrice} EUR"
+                                      },
+                                      {
+                                          "title": "Réduction moyenne",
+                                          "value": "${string(averageDiscount)} %"
+                                      },
+                                      {
+                                          "title": "Évaluation des stocks",
+                                          "value": "${string(inventoryValue)} EUR"
+                                      }
+                                  ],
+                                  "separator": true
+                              }
+                          ]
+                      },
+                      {
+                          "type": "Column",
+                          "width": "stretch",
+                          "items": [
+                              {
+                                  "type": "FactSet",
+                                  "spacing": "Large",
+                                  "facts": [
+                                      {
+                                          "title": "Unités en stock",
+                                          "value": "${string(unitsInStock)}"
+                                      },
+                                      {
+                                          "title": "Unités en commande",
+                                          "value": "${string(unitsOnOrder)}"
+                                      },
+                                      {
+                                          "title": "Niveau de commande",
+                                          "value": "${string(reorderLevel)}"
+                                      },
+                                      {
+                                          "title": "Revenus de la période",
+                                          "value": "${string(revenue)} EUR"
+                                      }
+                                  ],
+                                  "separator": true
+                              }
+                          ]
+                      }
+                  ]
+              }
+          ]
+      },
+      {
+          "type": "Container",
+          "items": [
+              {
+                  "type": "ActionSet",
+                  "actions": [
+                      {
+                          "type": "Action.ShowCard",
+                          "title": "Agir",
+                          "card": {
+                              "type": "AdaptiveCard",
+                              "body": [
+                                  {
+                                      "type": "Input.Text",
+                                      "id": "txtStock",
+                                      "label": "Quantité",
+                                      "min": 0,
+                                      "max": 9999,
+                                      "errorMessage": "Invalid input, use whole positive number",
+                                      "style": "Tel"
+                                  }
+                              ],
+                              "actions": [
+                                  {
+                                      "type": "Action.Execute",
+                                      "title": "Actualiser ✅",
+                                      "verb": "ok",
+                                      "data": {
+                                          "productId": "${productId}"
+                                      }
+                                  },
+                                  {
+                                      "type": "Action.Execute",
+                                      "title": "Réassort 📦",
+                                      "verb": "restock",
+                                      "data": {
+                                          "productId": "${productId}"
+                                      }
+                                  },
+                                  {
+                                      "type": "Action.Execute",
+                                      "title": "Annuler ❌",
+                                      "verb": "cancel",
+                                      "data": {
+                                          "productId": "${productId}"
+                                      }
+                                  }
+                              ]
+                          }
+                      }
+                  ]
+              }
+          ]
+      }
+  ]
+}

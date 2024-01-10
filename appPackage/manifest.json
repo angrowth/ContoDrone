@@ -1,0 +1,127 @@
+{
+    "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.16/MicrosoftTeams.schema.json",
+    "manifestVersion": "1.16",
+    "version": "1.0.9",
+    "id": "${{TEAMS_APP_ID}}",
+    "packageName": "com.microsoft.teams.extension.contodrone",
+    "developer": {
+        "name": "Contoso",
+        "websiteUrl": "https://www.example.com",
+        "privacyUrl": "https://www.example.com/termofuse",
+        "termsOfUseUrl": "https://www.example.com/privacy"
+    },
+    "icons": {
+        "color": "color.png",
+        "outline": "outline.png"
+    },
+    "name": {
+        "short": "ContoDrone",
+        "full": "ContoDrone App"
+    },
+    "description": {
+        "short": "L'app aide à localiser et actualiser les données de l'inventaire des produits.",
+        "full": "ContoDrone est l'outil par excellence pour gérer l'inventaire de vos produits. Grâce à son interface intuitive et à ses puissantes fonctionnalités, vous pourrez facilement trouver vos produits par nom, catégorie, état des stocks et ville du fournisseur. Vous pouvez également mettre à jour les informations relatives à l'inventaire à l'aide de l'application. \n\n **Pourquoi choisir ContoDrone:** \n\n ContoDrone est la solution parfaite pour les entreprises de toutes tailles qui ont besoin de suivre leur inventaire. Que vous soyez propriétaire d'une petite entreprise ou d'une grande société, ContoDrone peut vous aider à rester au top de vos besoins en matière de gestion d'inventaire. \n\n **Caractéristiques et avantages:** \n\n - Recherche de produits facile grâce à Microsoft Copilot. Commencez simplement par dire : 'Trouvez les drones commerciaux dont le stock est faible' \r - Mises à jour de l'inventaire en temps réel : Suivez les niveaux de stock en temps réel et mettez-les à jour si nécessaire \r - Interface conviviale : L'interface intuitive de ContoDrone facilite la navigation et l'utilisation \n\n **Disponibilité:** \n\n Pour utiliser ContoDrone, vous aurez besoin d'un compte Microsoft 365 actif. Assurez-vous que votre administrateur active l'application pour votre compte Microsoft 365."
+    },
+    "accentColor": "#FFFFFF",
+    "bots": [
+        {
+          "botId": "${{BOT_ID}}",
+          "scopes": [ "personal", "team", "groupchat" ],
+          "isNotificationOnly": false,
+          "supportsFiles": false
+        }
+      ],
+    "composeExtensions": [
+        {
+            "botId": "${{BOT_ID}}",
+            "commands": [
+                {
+                    "id": "inventorySearch",
+                    "context": [
+                        "compose",
+                        "commandBox"
+                    ],
+                    "description": "Recherche de produits par nom, catégorie, état des stocks, localisation du fournisseur, niveau de stock",
+                    "title": "Produits",
+                    "type": "query",
+                    "parameters": [
+                        {
+                            "name": "productName",
+                            "title": "Nom du produit",
+                            "description": "Entrez un nom de produit ici",
+                            "inputType": "text"
+                        },
+                        {
+                            "name": "categoryName",
+                            "title": "Nom de la catégorie",
+                            "description": "Saisir la catégorie du produit",
+                            "inputType": "text"
+                        },
+                        {
+                            "name": "inventoryStatus",
+                            "title": "État des stocks",
+                            "description": "Indiquez l'état de l'inventaire du produit : 'en stock', 'faible stock', 'en commande' ou 'en rupture de stock'.",
+                            "inputType": "text"
+                        },
+                        {
+                            "name": "supplierCity",
+                            "title": "Ville du fournisseur",
+                            "description": "Saisir la ville du fournisseur du produit",
+                            "inputType": "text"
+                        },
+                        {
+                            "name": "stockQuery",
+                            "title": "Niveau de stock",
+                            "description": "Saisissez une plage de nombres entiers tels que 0-42 ou 100- (pour plus de 100 articles).",
+                            "inputType": "text"
+                        }
+                    ]
+                },
+                {
+                    "id": "discountSearch",
+                    "context": [
+                        "compose",
+                        "commandBox"
+                    ],
+                    "description": "Recherche de produits à prix réduits par catégorie",
+                    "title": "Réductions",
+                    "type": "query",
+                    "parameters": [
+                        {
+                            "name": "categoryName",
+                            "title": "Nom de la catégorie",
+                            "description": "Entrez la catégorie pour trouver des produits à prix réduit",
+                            "inputType": "text"
+                        }
+                    ]
+                },
+                {
+                    "id": "revenueSearch",
+                    "context": [
+                        "compose",
+                        "commandBox"
+                    ],
+                    "description": "Trouver des produits en fonction de leur chiffre d'affaires/période",
+                    "title": "Revenus",
+                    "type": "query",
+                    "parameters": [
+                        {
+                            "name": "revenueRange",
+                            "title": "Fourchette de revenus",
+                            "description": "Saisissez 'haut' ou 'bas' ou saisissez une plage de nombres entiers tels que 0-10000 ou 5000-",
+                            "inputType": "text"
+                        }
+                    ]
+                }
+            ]
+        }
+        
+    ],
+    "configurableTabs": [],
+    "staticTabs": [],
+    "permissions": [
+        "identity",
+        "messageTeamMembers"
+    ],
+    "validDomains": []
+}

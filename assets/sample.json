@@ -1,0 +1,60 @@
+[
+    {
+        "name": "copilot-for-m365-plugin-contodrone-ts",
+        "source": "Contoso",
+        "title": "ContoDrone plugin pour Microsoft 365 Copilot",
+        "shortDescription": "Cet exemple implemente une extension de message Teams qui peut être utilisée comme un plugin pour Microsoft Copilot pour Microsoft 365.",
+        "url": "https://github.com/angrowth/ContoDrone",
+        "downloadUrl": "https://github.com/angrowth/ContoDrone",
+        "longDescription": [
+            "Cet exemple implemente une extension de message Teams qui peut être utilisée comme un plugin pour Microsoft Copilot pour Microsoft 365. L'extension de message permet aux utilisateurs d'interroger la base de données de drones de Contoso."
+        ],
+        "creationDateTime": "2023-12-28",
+        "updateDateTime": "2023-12-28",
+        "products": [
+            "Microsoft Teams",
+            "Microsoft 365 Copilot"
+        ],
+        "metadata": [
+            {
+                "key": "PLATFORM",
+                "value": "Node.js"
+            },
+            {
+                "key": "LANGUAGE",
+                "value": "TypeScript"
+            },
+            {
+                "key": "TEAMS-PACKAGE",
+                "value": "Yes"
+            }
+        ],
+        "thumbnails": [
+            {
+                "type": "image",
+                "order": 50,
+                "url": "https://github.com/angrowth/ContoDrone/assets/plugin.png",
+                "alt": "Capture d'écran de l'exemple d'extension fonctionnant dans Copilot dans Microsoft Teams"
+            }
+        ],
+        "authors": [
+            {
+                "gitHubAccount": "angrowth",
+                "pictureUrl": "https://github.com/angrowth.png",
+                "name": "angrowth"
+            }
+        ],
+        "references": [
+            {
+                "name": "Étendre Microsoft Copilot pour Microsoft 365",
+                "description": "En savoir plus sur la manière d'étendre Microsoft Copilot pour Microsoft 365.",
+                "url": "https://aka.ms/extendcopilotm365"
+            },
+            {
+                "name": "Teams Toolkit pour Visual Studio Code",
+                "description": "En savoir plus sur Teams Toolkit pour Visual Studio Code.",
+                "url": "https://learn.microsoft.com/microsoftteams/platform/toolkit/teams-toolkit-fundamentals?pivots=visual-studio-code-v5"
+            }
+        ]
+    }
+]

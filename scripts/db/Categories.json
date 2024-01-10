@@ -1,0 +1,40 @@
+{
+  "Categories": [
+    {
+      "CategoryID": 1,
+      "CategoryName": "Drones de Loisirs",
+      "Description": "Drones légers et maniables pour les amateurs et les passionnés de photographie aérienne.",
+      "PictureUrl": "https://raw.githubusercontent.com/angrowth/ContoDrone/main/assets/images/CategoryID_1.jpg"
+    },
+    {
+      "CategoryID": 2,
+      "CategoryName": "Drones Commerciaux",
+      "Description": "Drones conçus pour des applications commerciales, comme la livraison de colis, la surveillance et l'agriculture de précision.",
+      "PictureUrl": "https://raw.githubusercontent.com/angrowth/ContoDrone/main/assets/images/CategoryID_1.jpg"
+    },
+    {
+      "CategoryID": 3,
+      "CategoryName": "Drones de Course",
+      "Description": "Drones à haute vitesse et à performance élevée, utilisés dans les compétitions de courses de drones.",
+      "PictureUrl": "https://raw.githubusercontent.com/angrowth/ContoDrone/main/assets/images/CategoryID_1.jpg"
+    },
+    {
+      "CategoryID": 4,
+      "CategoryName": "Drones de Sécurité",
+      "Description": "Drones utilisés par les forces de l'ordre et les services de sécurité pour la surveillance, le suivi et la reconnaissance.",
+      "PictureUrl": "https://raw.githubusercontent.com/angrowth/ContoDrone/main/assets/images/CategoryID_1.jpg"
+    },
+    {
+      "CategoryID": 5,
+      "CategoryName": "Drones de Recherche et Sauvetage",
+      "Description": "Drones équipés pour les opérations de recherche et de sauvetage, y compris ceux dotés de capteurs thermiques et de caméras à haute résolution.",
+      "PictureUrl": "https://raw.githubusercontent.com/angrowth/ContoDrone/main/assets/images/CategoryID_1.jpg"
+    },
+    {
+      "CategoryID": 6,
+      "CategoryName": "Drones Agricoles",
+      "Description": "Drones spécialisés pour l'agriculture, utilisés pour la cartographie des cultures, l'épandage de pesticides et la surveillance des champs.",
+      "PictureUrl": "https://raw.githubusercontent.com/angrowth/ContoDrone/main/assets/images/CategoryID_1.jpg"
+    }
+  ]
+}

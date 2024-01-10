@@ -1,0 +1,18 @@
+{
+    "productName": "Mark 8",
+    "unitsInStock": "200",
+    "productId": 1,
+    "categoryId": 1,
+    "imageUrl": "https://raw.githubusercontent.com/angrowth/ContoDrone/main/assets/images/ProductID_1.jpg",
+    "supplierName": "Contoso",
+    "supplierCity": "New York",
+    "categoryName": "Drones de Loisirs",
+    "inventoryStatus": "En stock",
+    "unitPrice": "2500",
+    "unitsOnOrder": "50",
+    "reorderLevel": "15",
+    "unitSales": "50",
+    "inventoryValue": "125,000",
+    "revenue": "500,000",
+    "averageDiscount": "23%"
+}
